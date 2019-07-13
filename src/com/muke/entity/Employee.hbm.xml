@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.muke.entity.Employee" table="employee" >
+		<id name="eid" column="eid" >
+			<generator class="native"/>
+		</id>
+		<property name="ename" column="ename" length="20"/>
+		<property name="sex" column="sex" />
+		<property name="eno" column="eno" length="20"/>
+		<property name="birthday" column="birthday" />
+		<property name="joinDate" column="joinDate" />
+		<property name="userName" column="username" length="20"/>
+		<property name="password" column="password" length="20"/>
+
+		<many-to-one name="department" class="com.muke.entity.Department" column="dno"/>
+	</class>
+
+	<!-- 配置光联关系的映射 -->
+
+
+</hibernate-mapping>
